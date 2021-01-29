@@ -4,12 +4,15 @@ import FirstSchedular from "./Components/FirstSchedular";
 // import 'antd/dist/antd.less';
 import SecondScheduler from "./Components/SecondScheduler";
 
-// import './App.css';
+import './App.css';
+import NewScheduler from "./Components/NewScheduler";
 
 function App() {
   return (
     <div className="App">
-     <SecondScheduler/>
+     {/* <SecondScheduler/> */}
+     {/* <FirstSchedular/> */}
+     <NewScheduler/>
     </div>
   );
 }

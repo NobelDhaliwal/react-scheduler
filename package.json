@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2-react-calendars": "^18.4.39",
+    "@syncfusion/ej2-react-dropdowns": "^18.4.39",
     "@syncfusion/ej2-react-schedule": "^18.4.35",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
