@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     Inject, ScheduleComponent, Day, Week, WorkWeek,
     Month, Agenda, TimelineViews, TimelineMonth,
@@ -6,6 +6,8 @@ import {
     Resize, ResourcesDirective, ResourceDirective, ViewDirective, ViewsDirective,
     enableTooltip,
 } from "@syncfusion/ej2-react-schedule";
+import { ButtonComponent } from '@syncfusion/ej2-react-buttons';
+import {DataManager,WebApiAdaptor} from "@syncfusion/ej2-data";
 import "./NewScheduler.css";
 import {DropDownListComponent} from "@syncfusion/ej2-react-dropdowns";
 import {DateTimePickerComponent} from "@syncfusion/ej2-react-calendars";
@@ -23,10 +25,10 @@ L10n.load({
 })
 function NewScheduler(props) {
     const [localData, setLocalData] = useState([{
-        id: 2,
+        id: 1,
         Subject: "Visit To Doc",
-        StartTime: new Date(2021, 0, 29, 16, 0),
-        EndTime: new Date(2021, 0, 29, 20, 0),
+        StartTime: new Date(2021, 1, 2, 16, 0),
+        EndTime: new Date(2021, 1, 2, 20, 0),
         isAllDay: true,
         // RecurrenceRule: "FREQ=DAILY;INTERVAL=1;COUNT=10",
         ResourceId: 1,
@@ -56,6 +58,7 @@ function NewScheduler(props) {
         Description:"Learning Class"
     },
 ]);
+const localRef = useRef([]);
     const [resourceDataSource, setResouceDataSource] = useState([
         { Name: "John", Id: 1, Color: "#ea7a57" },
         { Name: "Steve", Id: 2, Color: "#357CD2" },
@@ -70,6 +73,19 @@ function NewScheduler(props) {
         { Name: "Task 3", Id: 3, Color: "#00bdae", GroupId: 3 }
     ]);
   
+    //DAta
+    // const remoteData = new DataManager({
+    //  url:"https://js.syncfusion.com/demos/ejservices/api/Schedule/LoadData",
+    //  adaptor: new WebApiAdaptor,
+    //  crossDomain:true
+    // });
+
+    const onEditClick=() =>{
+      };
+        
+   
+
+    
  const editorWindowTemplate=()=>{
 return(
   <table className="custom-event-editor" style={{ width: '100%', cellpadding: '5' }}>
@@ -107,12 +123,16 @@ return(
 
         <div>
             {/* <DropDownListComponent  /> */}
-            <ScheduleComponent currentView="Month" width='100%' height='100%'
+            <ButtonComponent id='edit' title='Edit'  onClick={onEditClick}>Edit</ButtonComponent>
+           
+            <ScheduleComponent  currentView="Month" width='100%' height='100%'
              
-                selectedDate={new Date(2021, 0, 29)}
-                eventSettings={{ dataSource: localData}}
+                selectedDate={new Date(2021,1, 1)}
+                eventSettings={{ dataSource:localData}}
               editorTemplate={editorWindowTemplate}
+              
                 group={groupData}
+              
                 
             >
 

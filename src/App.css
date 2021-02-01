@@ -1,15 +1,3 @@
 body{
     margin:8px;
 }
-.e-schedule .e-appointment-details{
-    padding: 0 !important;
-}
-.template-wrap{
-    background-color: green;
-    padding-left:20px;
-    padding-right:5px;
-    padding-top:7px;
-    padding-bottom:10px;
-    font-size:14px;
-    font-weight:500;
-}
