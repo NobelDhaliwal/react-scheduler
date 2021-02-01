@@ -6,13 +6,15 @@ import SecondScheduler from "./Components/SecondScheduler";
 
 import './App.css';
 import NewScheduler from "./Components/NewScheduler";
+import TestSchedulers from "./Components/TestSchedulers";
 
 function App() {
   return (
     <div className="App">
      {/* <SecondScheduler/> */}
      {/* <FirstSchedular/> */}
-     <NewScheduler/>
+     {/* <NewScheduler/> */}
+     <TestSchedulers/>
     </div>
   );
 }
